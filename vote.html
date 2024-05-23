@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Page</title>
+    <link rel="stylesheet" href="vote.css">
+</head>
+<body>
+    <h2>Welcome to the Voting Page</h2>
+    <p>Please select a party and submit your vote:</p>
+    <form id="voteForm">
+        <input type="radio" id="party1" name="party" value="Party A">
+        <label for="party1">Party A</label><br>
+        <input type="radio" id="party2" name="party" value="Party B">
+        <label for="party2">Party B</label><br>
+        <input type="radio" id="party3" name="party" value="Party C">
+        <label for="party3">Party C</label><br><br>
+        <input type="submit" value="Submit Vote">
+    </form>
+
+    <script>
+        document.getElementById("voteForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let selectedParty = document.querySelector('input[name="party"]:checked').value;
+            // Here, you can send the vote data to a server or do further processing as needed.
+            alert("You voted for " + selectedParty + ". Thank you for voting!");
+        });
+    </script>
+</body>
+</html>
